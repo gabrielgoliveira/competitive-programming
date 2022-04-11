@@ -56,7 +56,7 @@ int main()
         while(a <= atual) {
             if(calcPrimo[a] == 0) {
                 
-                /* Para evitar recauculo, vamos usar a estrutura de dados map para armazenar os primos já calculados
+                /* Para evitar recalculo, vamos usar a estrutura de dados map para armazenar os primos já calculados
                 **  -1 -> não é primo 
                 **   1 é primo e 
                 **   0 não foi calculado ainda
