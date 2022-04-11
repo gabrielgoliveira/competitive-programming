@@ -1,20 +1,13 @@
-/******************************************************************************
-
-                              Online C++ Compiler.
-               Code, Compile, Run and Debug C++ program online.
-Write your code in this editor and press "Run" button to compile and execute it.
-
-*******************************************************************************/
-
 #include <iostream>
 #include <bits/stdc++.h>
 #include <math.h> 
+
 using namespace std;
 
 int isPrimo(int n){
-    int raiz = sqrt(n);
+    long long int raiz = sqrt(n);
     int flag = 1;
-    for(int j = 2; j <= raiz; j++){
+    for(long long int j = 2; j <= raiz; j++){
         if(n%j == 0 && n!=j) {
             flag = 0;
             break;
@@ -29,21 +22,28 @@ int isPrimo(int n){
 
 int main()
 {
-    vector<int> lista;
-    vector<vector<int>> mults;
-    map<int, int> calcPrimo;
-    int temp = 0;
+    vector < long long int > lista;
+    vector < vector <long long int > > mults;
+    map < long long int, int > calcPrimo;
+
+    long long int temp = 0;
+    int in;
+
     while(temp != -1){
         // leitura dos valores
-        cin>>temp;
+        cin >> temp;
+        if(temp == -1) continue;
         lista.push_back(temp);
     }
+
     int n = lista.size();
     mults.resize(n);
+
     for(int i = 0; i < n; i++) {
          
-        int a = 2, atual = lista[i];
-        int limite_superior = sqrt(lista[i]);
+        int a = 2;
+        long long int atual = lista[i];
+        long long int limite_superior = sqrt(lista[i]);
         
         if(isPrimo(atual)){
             calcPrimo[atual] = 1;
@@ -80,8 +80,8 @@ int main()
     }
     
     for(int i = n-1; i >=0; i--) {
-        for(int j = 0; j < mults[i].size(); j++) cout<<mults[i][j]<<" ";
-        cout<<endl;
+        for(int j = 0; j < mults[i].size(); j++) cout << mults[i][j]<<" ";
+        cout << endl;
     }
     
     return 0;
