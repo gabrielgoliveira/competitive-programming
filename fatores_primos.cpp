@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int isPrimo(int n){
+int isPrimo(long long int n){
     long long int raiz = sqrt(n);
     int flag = 1;
     for(long long int j = 2; j <= raiz; j++){
